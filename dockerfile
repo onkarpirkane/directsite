@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get install -y apache zip unzip weget
+RUN apt-get update && apt-get install -y apache2 zip unzip wget
 WORKDIR /var/www/html
 RUN weget https://www.free-css.com/assets/files/free-css-templates/download/page296/mediplus-lite.zip
 RUN unzip mediplus-lite.zip
