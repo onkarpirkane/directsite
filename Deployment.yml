@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: directsite
+spec:
+  replicas: 2
+  selectors: 
+    matchlables:
+      app: directsite
+  template:
+    metadata: 
+      labels:
+        app: directsite
+    spec:
+      containers: 
+      - name: dirctsite
+        image: onkarpirkane/directsite
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

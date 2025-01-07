@@ -1,0 +1,16 @@
+name: Apply  k8s configuration 
+hosts: node
+become: yes
+tasks: 
+    - name: create new deployment 
+      command: kubectl apply -f /home/ubuntu/Deployment.yml
+      register: result
+      environment:
+         KUBECONFIG: /home/ubuntu/.kube/config
+
+    - name: create new service
+      command: kubectl apply -f /home/ubuntu/Service.yml
+      register: result
+      environment:
+         KUBECONFIG: /home/ubuntu/.kube/config
+
