@@ -13,7 +13,7 @@ spec:
         app: directsite
     spec:
       containers: 
-      - name: dirctsite
+      - name: directsite
         image: onkarpirkane/directsite
         imagePullPolicy: Always
         ports:
